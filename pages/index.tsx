@@ -77,8 +77,8 @@ const Home: NextPage = () => {
   return (
     <Box>
       <SEO
-        title="Saas UI Landingspage"
-        description="Free SaaS landingspage starter kit"
+        title="Just Ship"
+        description="Saas UI is a modern, responsive and accessible design system for building beautiful and functional user interfaces."
       />
       <Box>
         <HeroSection />
