@@ -30,7 +30,7 @@ const siteConfig = {
 
       {
         label: "Demo",
-        href: "/signup",
+        href: "https://demo.justship.pro/en",
         variant: "primary",
       },
     ],
