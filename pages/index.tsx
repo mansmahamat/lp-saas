@@ -1,6 +1,6 @@
-import * as React from "react";
-import type { NextPage } from "next";
-import Image from "next/image";
+import * as React from "react"
+import type { NextPage } from "next"
+import Image from "next/image"
 import {
   Container,
   Box,
@@ -17,14 +17,19 @@ import {
   IconButton,
   VStack,
   Flex,
-} from "@chakra-ui/react";
-import { SEO } from "components/seo/seo";
+} from "@chakra-ui/react"
+import { SEO } from "components/seo/seo"
 
-import { FallInPlace } from "components/motion/fall-in-place";
-import { Hero } from "components/hero";
-import { Link, Br } from "@saas-ui/react";
-import { Em } from "components/typography";
-import { NextjsLogo, ChakraLogo } from "components/logos";
+import { FallInPlace } from "components/motion/fall-in-place"
+import { Hero } from "components/hero"
+import { Link, Br } from "@saas-ui/react"
+import { Em } from "components/typography"
+import {
+  NextjsLogo,
+  ChakraLogo,
+  PrismaIcon,
+  StripeIcon,
+} from "components/logos"
 import {
   FiArrowRight,
   FiBox,
@@ -42,24 +47,31 @@ import {
   FiToggleLeft,
   FiTrendingUp,
   FiUserPlus,
-} from "react-icons/fi";
-import { Features } from "components/features";
-import { BackgroundGradient } from "components/gradients/background-gradient";
-import { Faq } from "components/faq";
-import { Pricing } from "components/pricing/pricing";
+} from "react-icons/fi"
+import { Features } from "components/features"
+import { BackgroundGradient } from "components/gradients/background-gradient"
+import { Faq } from "components/faq"
+import { Pricing } from "components/pricing/pricing"
 
-import { ButtonLink } from "components/button-link/button-link";
-import { Testimonial, Testimonials } from "components/testimonials";
+import { ButtonLink } from "components/button-link/button-link"
+import { Testimonial, Testimonials } from "components/testimonials"
 
-import faq from "data/faq";
-import testimonials from "data/testimonials";
-import pricing from "data/pricing";
+import faq from "data/faq"
+import testimonials from "data/testimonials"
+import pricing from "data/pricing"
 
 import {
   Highlights,
   HighlightsItem,
   HighlightsTestimonialItem,
-} from "components/highlights";
+} from "components/highlights"
+import Feature1 from "components/Features1"
+import Feature2 from "components/Features2"
+import Feature3 from "components/Features3"
+import Feature4 from "components/Features4"
+import Feature5 from "components/Features5"
+import { IoAppsOutline } from "react-icons/io5"
+import { FaLanguage, FaPaintBrush } from "react-icons/fa"
 
 const Home: NextPage = () => {
   return (
@@ -71,19 +83,23 @@ const Home: NextPage = () => {
       <Box>
         <HeroSection />
 
-        <HighlightsSection />
+        {/* <HighlightsSection /> */}
 
-        <FeaturesSection />
+        <Feature1 />
+        <Feature2 />
+        <Feature3 />
+        <Feature4 />
+        {/* <Feature5 /> */}
 
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
 
         <PricingSection />
 
         <FaqSection />
       </Box>
     </Box>
-  );
-};
+  )
+}
 
 const HeroSection: React.FC = () => {
   return (
@@ -97,45 +113,29 @@ const HeroSection: React.FC = () => {
             px="0"
             title={
               <FallInPlace>
-                Build beautiful
-                <Br /> software faster
+                Just SHIP
+                <Br /> Your Shortcut to Launching SaaS in 5 Days!
               </FallInPlace>
             }
             description={
               <FallInPlace delay={0.4} fontWeight="medium">
-                Saas UI is a <Em>React component library</Em>
-                <Br /> that doesn&apos;t get in your way and helps you <Br />{" "}
-                build intuitive SaaS products with speed.
+                In just five days, are you ready to launch your product and set
+                sail for the SaaS world? There is nowhere else to look! <Br />{" "}
+                Our Next.js Boilerplate Just SHIP is the perfect partner for
+                starting this thrilling adventure and realizing your SaaS
+                ambitions.
               </FallInPlace>
             }
           >
             <FallInPlace delay={0.8}>
               <HStack pt="4" pb="12" spacing="8">
-                <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
+                <NextjsLogo height="28px" /> <ChakraLogo height="28px" />{" "}
+                <PrismaIcon height="28px" /> <StripeIcon height="28px" />
               </HStack>
 
               <ButtonGroup spacing={4} alignItems="center">
-                <ButtonLink colorScheme="primary" size="lg" href="/signup">
-                  Sign Up
-                </ButtonLink>
-                <ButtonLink
-                  size="lg"
-                  href="https://demo.saas-ui.dev"
-                  variant="outline"
-                  rightIcon={
-                    <Icon
-                      as={FiArrowRight}
-                      sx={{
-                        transitionProperty: "common",
-                        transitionDuration: "normal",
-                        ".chakra-button:hover &": {
-                          transform: "translate(5px)",
-                        },
-                      }}
-                    />
-                  }
-                >
-                  View demo
+                <ButtonLink colorScheme="primary" size="lg" href="#pricing">
+                  Ship it now
                 </ButtonLink>
               </ButtonGroup>
             </FallInPlace>
@@ -152,7 +152,7 @@ const HeroSection: React.FC = () => {
             <FallInPlace delay={1}>
               <Box overflow="hidden" height="100%">
                 <Image
-                  src="/static/screenshots/list.png"
+                  src="/static/screenshots/justship.png"
                   layout="fixed"
                   width={1200}
                   height={762}
@@ -174,25 +174,25 @@ const HeroSection: React.FC = () => {
         pt="20"
         features={[
           {
-            title: "Accessible",
-            icon: FiSmile,
-            description: "All components strictly follow WAI-ARIA standards.",
+            title: "Next.js 14 app router",
+            icon: IoAppsOutline,
+            description:
+              "SaaS starter kit with Next.js 14 and the new app router.",
             iconPosition: "left",
             delay: 0.6,
           },
           {
-            title: "Themable",
-            icon: FiSliders,
+            title: "Internationalization ",
+            icon: FaLanguage,
             description:
-              "Fully customize all components to your brand with theme support and style props.",
+              "To make your app accessible to a global audience, we have included internationalization.",
             iconPosition: "left",
             delay: 0.8,
           },
           {
-            title: "Composable",
-            icon: FiGrid,
-            description:
-              "Compose components to fit your needs and mix them together to create new ones.",
+            title: "Modern UI",
+            icon: FaPaintBrush,
+            description: "Adjust every aspect of your app to match your brand.",
             iconPosition: "left",
             delay: 1,
           },
@@ -208,11 +208,11 @@ const HeroSection: React.FC = () => {
         reveal={FallInPlace}
       />
     </Box>
-  );
-};
+  )
+}
 
 const HighlightsSection = () => {
-  const { value, onCopy, hasCopied } = useClipboard("yarn add @saas-ui/react");
+  const { value, onCopy, hasCopied } = useClipboard("yarn add @saas-ui/react")
 
   return (
     <Highlights>
@@ -314,8 +314,8 @@ const HighlightsSection = () => {
         </Wrap>
       </HighlightsItem>
     </Highlights>
-  );
-};
+  )
+}
 
 const FeaturesSection = () => {
   return (
@@ -414,20 +414,20 @@ const FeaturesSection = () => {
         },
       ]}
     />
-  );
-};
+  )
+}
 
 const TestimonialsSection = () => {
   const columns = React.useMemo(() => {
     return testimonials.items.reduce<Array<typeof testimonials.items>>(
       (columns, t, i) => {
-        columns[i % 3].push(t);
+        columns[i % 3].push(t)
 
-        return columns;
+        return columns
       },
       [[], [], []]
-    );
-  }, []);
+    )
+  }, [])
 
   return (
     <Testimonials
@@ -445,8 +445,8 @@ const TestimonialsSection = () => {
         ))}
       </>
     </Testimonials>
-  );
-};
+  )
+}
 
 const PricingSection = () => {
   return (
@@ -455,25 +455,25 @@ const PricingSection = () => {
         VAT may be applicable depending on your location.
       </Text>
     </Pricing>
-  );
-};
+  )
+}
 
 const FaqSection = () => {
-  return <Faq {...faq} />;
-};
+  return <Faq {...faq} />
+}
 
-export default Home;
+export default Home
 
 export async function getStaticProps() {
   return {
     props: {
       announcement: {
-        title: "Support us by becoming a stargazer! 🚀 ",
+        title: "Launch in 5 days ! 🚀 ",
         description:
           '<img src="https://img.shields.io/github/stars/saas-js/saas-ui.svg?style=social&label=Star" />',
         href: "https://github.com/saas-js/saas-ui",
         action: false,
       },
     },
-  };
+  }
 }

@@ -7,11 +7,11 @@ import {
   Stack,
   Flex,
   HStack,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react"
 
-import { Link, LinkProps } from '@saas-ui/react'
+import { Link, LinkProps } from "@saas-ui/react"
 
-import siteConfig from 'data/config'
+import siteConfig from "data/config"
 
 export interface FooterProps extends BoxProps {
   columns?: number
@@ -20,14 +20,14 @@ export interface FooterProps extends BoxProps {
 export const Footer: React.FC<FooterProps> = (props) => {
   const { columns = 2, ...rest } = props
   return (
-    <Box bg="white" _dark={{ bg: 'gray.900' }} {...rest}>
+    <Box bg="white" _dark={{ bg: "gray.900" }} {...rest}>
       <Container maxW="container.2xl" px="8" py="8">
         <SimpleGrid columns={columns}>
           <Stack spacing="8">
             <Stack alignItems="flex-start">
-              <Flex>
+              {/* <Flex>
                 <Box as={siteConfig.logo} flex="1" height="32px" />
-              </Flex>
+              </Flex> */}
               <Text fontSize="md" color="muted">
                 {siteConfig.seo.description}
               </Text>
@@ -75,8 +75,8 @@ export const FooterLink: React.FC<LinkProps> = (props) => {
       fontSize="sm"
       textDecoration="none"
       _hover={{
-        color: 'white',
-        transition: 'color .2s ease-in',
+        color: "white",
+        transition: "color .2s ease-in",
       }}
       {...rest}
     >
